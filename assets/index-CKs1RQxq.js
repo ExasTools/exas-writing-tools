@@ -1,13 +1,15 @@
-(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();var e=document.querySelector(`#app`),t=[];function n(){e.innerHTML=`
+(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();var e=document.querySelector(`#app`),t=`0.0.1`,n=[];function r(){e.innerHTML=`
     <main class="app-shell">
-      ${r()}
+      ${i()}
       
       <section class="tool-card">
         <p> Currently, the only features available is a very rudamentary character input screen. More to come... </p>
         <p> That said, to those that read this- thank you for checking out what I'm working on! I really appreciate it more than I can convey through text </p>
       </section>
+      ${o()}
     </main>
-    `,a()}function r(){return`
+    
+    `,s()}function i(){return`
     <h1> Exa's Writing Tools </h1>
     <section class="header-section">
       <button id="home-button" class="nav-button">Home</button>
@@ -15,7 +17,7 @@
       <button id="writing-button" class="nav-button">Writing Desk</button>
       <button id="settings-button" class="nav-button">Settings</button>
     </section>
-  `}function i(){return`
+  `}function a(){return`
     <h1> The Lore Vault </h1>
       <section class="header-section">
         <button id="home-button" class="nav-button">Home</button>
@@ -29,33 +31,36 @@
         <button id="nations-button" class="nav-button">Nations</button>
         <button id="factions-button" class="nav-button">Factions</button>
       </section>
-  `}function a(){document.querySelector(`#home-button`).addEventListener(`click`,n),document.querySelector(`#vault-button`).addEventListener(`click`,s),document.querySelector(`#writing-button`).addEventListener(`click`,c),document.querySelector(`#settings-button`).addEventListener(`click`,l)}function o(){document.querySelector(`#home-button`).addEventListener(`click`,n),document.querySelector(`#char-button`).addEventListener(`click`,u),document.querySelector(`#locs-button`).addEventListener(`click`,f),document.querySelector(`#events-button`).addEventListener(`click`,p),document.querySelector(`#tags-button`).addEventListener(`click`,m),document.querySelector(`#time-button`).addEventListener(`click`,h),document.querySelector(`#religion-button`).addEventListener(`click`,g),document.querySelector(`#gods-button`).addEventListener(`click`,_),document.querySelector(`#nations-button`).addEventListener(`click`,v),document.querySelector(`#factions-button`).addEventListener(`click`,y)}function s(){e.innerHTML=`
+  `}function o(){return`
+    <section class="footer-card"><p>Exa's Writing Tools build-${t}</p></section>
+  `}function s(){document.querySelector(`#home-button`).addEventListener(`click`,r),document.querySelector(`#vault-button`).addEventListener(`click`,l),document.querySelector(`#writing-button`).addEventListener(`click`,u),document.querySelector(`#settings-button`).addEventListener(`click`,d)}function c(){document.querySelector(`#home-button`).addEventListener(`click`,r),document.querySelector(`#char-button`).addEventListener(`click`,f),document.querySelector(`#locs-button`).addEventListener(`click`,m),document.querySelector(`#events-button`).addEventListener(`click`,h),document.querySelector(`#tags-button`).addEventListener(`click`,g),document.querySelector(`#time-button`).addEventListener(`click`,_),document.querySelector(`#religion-button`).addEventListener(`click`,v),document.querySelector(`#gods-button`).addEventListener(`click`,y),document.querySelector(`#nations-button`).addEventListener(`click`,b),document.querySelector(`#factions-button`).addEventListener(`click`,x)}function l(){e.innerHTML=`
     <main class="app-shell">
-      ${i()}
+      ${a()}
 
       <section class="tool-card">
         <h1>Lore Vault</h1>
         <p class="subtitle">You may select your desired 'mode' at the top.</p>
       </section>
+      ${o()}
     </main>
-    `,o()}function c(){e.innerHTML=`
+    `,c()}function u(){e.innerHTML=`
     <main class="app-shell">
-      ${r()}
+      ${i()}
       <h1>Writing Desk</h1>
       <p class="subtitle">Unavailable at this stage, but I promise it'll be soon!</p>
-
+    ${o()}
     </main>
-  `,a()}function l(){e.innerHTML=`
+  `,s()}function d(){e.innerHTML=`
     <main class="app-shell">
-      ${r()}
+      ${i()}
       <br>
       <h1> Settings Page </h1>
       <p class="subtitle">Unavailable at this stage, will be made later on. </p>
-
+    ${o()}
     </main>
-  `,a()}function u(){e.innerHTML=`
+  `,s()}function f(){e.innerHTML=`
     <main class="app-shell">
-    ${i()}
+    ${a()}
     <br>
     <section class="tool-card-char-page">  
     <label>Character Name</label>
@@ -77,7 +82,9 @@
     </section>
 
     <section class="tool-card" id="characters-list"></section>
-  `,o(),document.querySelector(`#submit-button`).addEventListener(`click`,()=>{let e=document.querySelector(`#charName`),n=document.querySelector(`#charNickname`),r=document.querySelector(`#charAge`),i=document.querySelector(`#charRace`),a=document.querySelector(`#charDesc`),o={name:e.value||`Missing Information`,nickname:n.value||`Missing Information`,age:r.value||`Missing Information`,race:i.value||`Missing Information`,description:a.value||`Missing Information`};t.push(o),console.log(t),d(1)})}function d(e){if(!Number.isInteger(e)){console.error(`formID must be an integer`);return}switch(e){case 1:document.querySelector(`#characters-list`).innerHTML=t.map((e,t)=>`
+
+    ${o()}
+  `,c(),document.querySelector(`#submit-button`).addEventListener(`click`,()=>{let e=document.querySelector(`#charName`),t=document.querySelector(`#charNickname`),r=document.querySelector(`#charAge`),i=document.querySelector(`#charRace`),a=document.querySelector(`#charDesc`),o={name:e.value||`Missing Information`,nickname:t.value||`Missing Information`,age:r.value||`Missing Information`,race:i.value||`Missing Information`,description:a.value||`Missing Information`};n.push(o),console.log(n),p(1)})}function p(e){if(!Number.isInteger(e)){console.error(`formID must be an integer`);return}switch(e){case 1:document.querySelector(`#characters-list`).innerHTML=n.map((e,t)=>`
           <section class="character-card">
           <h2>Name: ${e.name}</h2>
           <hr class="card-custom-divider">
@@ -88,60 +95,60 @@
           <p>Index: ${t}</p>
           <button class="form-button" data-index="${t}">Edit</button> <button class="form-button" data-index="${t}">Delete</button>
           </section>
-        `).join(``);break}document.querySelectorAll(`.form-button`).forEach(e=>{e.addEventListener(`click`,()=>{console.log(`Look the button says the ID is `+e.dataset.index)})})}function f(){e.innerHTML=`
+        `).join(``);break}document.querySelectorAll(`.form-button`).forEach(e=>{e.addEventListener(`click`,()=>{console.log(`Look the button says the ID is `+e.dataset.index)})})}function m(){e.innerHTML=`
     <main class="app-shell">
-    ${i()}
+    ${a()}
     <br>
     <section class="tool-card">
       <p>Places page</p>
     </section>
-  `,o()}function p(){e.innerHTML=`
+  `,c()}function h(){e.innerHTML=`
     <main class="app-shell">
-    ${i()}
+    ${a()}
     <br>
     <section class="tool-card">
       <p>CEvents page</p>
     </section>
-  `,o()}function m(){e.innerHTML=`
+  `,c()}function g(){e.innerHTML=`
     <main class="app-shell">
-    ${i()}
+    ${a()}
     <br>
     <section class="tool-card">
       <p>Tags page</p>
     </section>
-  `,o()}function h(){e.innerHTML=`
+  `,c()}function _(){e.innerHTML=`
     <main class="app-shell">
-    ${i()}
+    ${a()}
     <br>
     <section class="tool-card">
       <p>Timeline page</p>
     </section>
-  `,o()}function g(){e.innerHTML=`
+  `,c()}function v(){e.innerHTML=`
     <main class="app-shell">
-    ${i()}
+    ${a()}
     <br>
     <section class="tool-card">
       <p>Religion page</p>
     </section>
-  `,o()}function _(){e.innerHTML=`
+  `,c()}function y(){e.innerHTML=`
     <main class="app-shell">
-    ${i()}
+    ${a()}
     <br>
     <section class="tool-card">
       <p>Gods/Deities page</p>
     </section>
-  `,o()}function v(){e.innerHTML=`
+  `,c()}function b(){e.innerHTML=`
     <main class="app-shell">
-    ${i()}
+    ${a()}
     <br>
     <section class="tool-card">
       <p>Nations page</p>
     </section>
-  `,o()}function y(){e.innerHTML=`
+  `,c()}function x(){e.innerHTML=`
     <main class="app-shell">
-    ${i()}
+    ${a()}
     <br>
     <section class="tool-card">
       <p>Factions page</p>
     </section>
-  `,o()}n();
+  `,c()}r();
