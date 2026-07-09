@@ -46,6 +46,16 @@ h1 {
   justify-content: center;
 }
 
+.footer-card {
+  margin-top: 32px;
+  border: 1px solid linear-gradient(to right, transparent, #333, transparent);
+  border-radius: 7px;
+  background: linear-gradient(to right, transparent, #333, transparent);
+  justify-content: center;
+  text-align: center;
+  color: #9999;
+}
+
 button {
   padding: 10px 14px;
   border: 0;

@@ -1,6 +1,7 @@
 import './style.css'
 
 const app = document.querySelector('#app')
+const ver = "0.0.1"
 
 // Define arrays (empty drawer)
 let Characters = []
@@ -16,7 +17,9 @@ function showHome() {
         <p> Currently, the only features available is a very rudamentary character input screen. More to come... </p>
         <p> That said, to those that read this- thank you for checking out what I'm working on! I really appreciate it more than I can convey through text </p>
       </section>
+      ${displayFooter()}
     </main>
+    
     `
   hookHeaderButtons()
 }
@@ -50,6 +53,12 @@ function displayLoreHeader() {
         <button id="nations-button" class="nav-button">Nations</button>
         <button id="factions-button" class="nav-button">Factions</button>
       </section>
+  `
+}
+
+function displayFooter() {
+  return `
+    <section class="footer-card"><p>Exa's Writing Tools build-${ver}</p></section>
   `
 }
 
@@ -106,6 +115,7 @@ function showLoreVault() {
         <h1>Lore Vault</h1>
         <p class="subtitle">You may select your desired 'mode' at the top.</p>
       </section>
+      ${displayFooter()}
     </main>
     `
     hookAltHeader()
@@ -117,7 +127,7 @@ function showWritingDesk() {
       ${displayHeader()}
       <h1>Writing Desk</h1>
       <p class="subtitle">Unavailable at this stage, but I promise it'll be soon!</p>
-
+    ${displayFooter()}
     </main>
   `
 
@@ -131,7 +141,7 @@ function showSettings() {
       <br>
       <h1> Settings Page </h1>
       <p class="subtitle">Unavailable at this stage, will be made later on. </p>
-
+    ${displayFooter()}
     </main>
   `
   hookHeaderButtons()
@@ -164,6 +174,8 @@ function lvChar() {
     </section>
 
     <section class="tool-card" id="characters-list"></section>
+
+    ${displayFooter()}
   `
   hookAltHeader()
   document.querySelector("#submit-button").addEventListener('click', () => {
