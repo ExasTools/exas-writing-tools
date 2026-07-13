@@ -2,7 +2,7 @@ import './style.css'
 import { saveCharacters, loadCharacters } from './characterStorage.js'
 
 const app = document.querySelector('#app')
-const ver = "0.0.4"
+const ver = "0.1.0"
 
 // Define arrays (empty drawer)
 let Characters = loadCharacters()
@@ -131,7 +131,8 @@ function devLog() {
       <p><strong>Development Log</strong></p>
       
       <section class="tool-card">
-        <p><strong>build-0.0.3</strong></p>
+        <p><strong>build-0.1.0 (Character Page Milestone)</strong></p>
+        <3>• Settled on "Quillworks" as the final project name
         <p>• Added a confirmation dialogue upon deletion of a character</p>
         <p>• Added an empty state message for <code>Characters</code> page</p>
         <p>• Like a goober, I've lightly versioned the Characters page in the very bottom middle.</p>
