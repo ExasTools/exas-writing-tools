@@ -1,5 +1,6 @@
 import './style.css'
 import { saveCharacters, loadCharacters } from './characterStorage.js'
+import { marked } from 'marked'
 
 const app = document.querySelector('#app')
 const ver = "0.1.0"
@@ -7,8 +8,9 @@ const ver = "0.1.0"
 // Define arrays (empty drawer)
 let Characters = loadCharacters()
 let editCharIndex = null
+let Locations = []
+let editLocIndex = null
 // I've refrained from adding ALL the drawers, I get scope creep like a mofo
-
 
 
 function showHome() {
@@ -132,7 +134,7 @@ function devLog() {
       
       <section class="tool-card">
         <p><strong>build-0.1.0 (Character Page Milestone)</strong></p>
-        <3>• Settled on "Quillworks" as the final project name
+        <p>• Settled on "Quillworks" as the final project name
         <p>• Added a confirmation dialogue upon deletion of a character</p>
         <p>• Added an empty state message for <code>Characters</code> page</p>
         <p>• Like a goober, I've lightly versioned the Characters page in the very bottom middle.</p>
@@ -286,13 +288,13 @@ function pushDataToPage(formID){
       document.querySelector('#characters-list').innerHTML = 
         Characters.map((character, index) => `
           <section class="character-card" id="character-card-${index}">
-          <h2>Name: ${character.name}</h2>
+          <h2>Name: ${marked.parseInline(character.name)}</h2>
           <hr class="card-custom-divider">
-          <p>Nickname: ${character.nickname}</p>
-          <p>Age: ${character.age}</p>
-          <p>Race: ${character.race}</p>
-          <p>Description: ${character.description}</p>
-          <p>Index: ${index}</p>
+          <div>Nickname: ${marked.parseInline(character.nickname)}</div>
+          <div>Age: ${marked.parseInline(character.age)}</div>
+          <div>Race: ${marked.parseInline(character.race)}</div>
+          <div>Description: ${marked.parse(character.description)}</div>
+          <div>Index: ${index}</div>
           <button class="form-button edit-button" data-index="${index}">Edit</button> <button class="form-button delete-button" data-index="${index}">Delete</button>
           </section>
         `).join('') 
