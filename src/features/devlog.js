@@ -17,7 +17,8 @@ export function showDevLog({
            <!-- Section intentionally left unclosed because I happen to like how the sections look when its stacked like this. -->
             <section class="tool-card-dlog">
               <p><strong>build-0.1.3</strong></p>
-              <p>• Created debugging module
+              <p>• Created debugging module</p>
+              <p>• Updated <code>characters.js</code> and <code>places.js</code> to properly grid entries.
             <hr class=card-custom-divider>
             <section class="tool-card-dlog"> 
               <p><strong>build-0.1.2</strong></p>
