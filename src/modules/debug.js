@@ -39,7 +39,10 @@ export function initDebugTools() {
 					localStorage.removeItem(key)
 					console.log(`Delete "${key}"`)
 				}
-			}
+			},
+			seed(key, amount) {
+				seed(key, amount)
+			},
 		}
 
 	console.log(`[Quillworks] Debugging enabled. Try qwDebug.dump()`)
@@ -68,7 +71,7 @@ function seed(key, amount) {
 		const place = {
 			name: `Debug Place ${index + 1}`,
 			type: 'Debug Type',
-			region: 'Debug Region'
+			region: 'Debug Region',
 			desc: `Generated place number ${index + 1}.`
 		}
 
