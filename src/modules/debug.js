@@ -5,6 +5,6 @@ export function debugStorageSave(key, json) {
 
 	console.groupCollapsed(`[Quillworks] Saved "${key}"`)
 	console.log('Object snapshot:', JSON.parse(json))
-	console.log('JSON writtin:' json)
+	console.log('JSON writtin:', json)
 	console.groupEnd()
 }
