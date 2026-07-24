@@ -3,9 +3,11 @@ import { displayHeader, displayLoreHeader, displayTimeHeader, displayWBHeader } 
 import { showCharacters } from './features/characters.js' // import characters page
 import { showPlaces } from './features/places.js' // import places page
 import { showDevLog } from './features/devlog.js'
+import { initDebugMsg } from './modules/debug.js'
 
 const app = document.querySelector('#app')
 const ver = "0.1.3"
+var debugMsg = false
 // Debugging has been passed to VITE through `npm run dev`
 
 
@@ -24,6 +26,10 @@ function showHome() {
     `
   hookHeaderButtons()
   setActiveButton('home-button')
+  if (!debugMsg) {
+    debugMsg = true
+    initDebugMsg()
+  }
 }
 
 // felt like the header should go here to keep it out of the way for the main code
