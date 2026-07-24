@@ -5,7 +5,7 @@ import { showPlaces } from './features/places.js' // import places page
 import { showDevLog } from './features/devlog.js'
 
 const app = document.querySelector('#app')
-const ver = "0.1.2"
+const ver = "0.1.3"
 const debugging = false // If set to true, the output will be more verbose...
 // TODO: Make verbose outputs.
 
